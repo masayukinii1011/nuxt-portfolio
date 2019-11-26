@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-portfolio",
+  "version": "1.0.0",
+  "description": "My astonishing Nuxt.js project",
+  "author": "masayukinii1011",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "animejs": "^3.1.0",
+    "node-sass": "^4.13.0",
+    "nuxt": "^2.0.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0"
+  },
+  "devDependencies": {}
+}
