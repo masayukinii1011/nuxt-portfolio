@@ -34,13 +34,9 @@ div {
   justify-content: center;
 }
 
-@keyframes text-in {
-  0% {
-    transform: translate(0, -20px);
-    opacity: 0;
-  }
-}
 .item {
+  font-family: 'Play';
+  letter-spacing: 0.04em;
   display: inline-block;
   color: #fff;
   min-width: 0.3em;
@@ -52,6 +48,13 @@ div {
   }
   @media screen and (max-width: 425px) {
     font-size: 26px;
+  }
+}
+
+@keyframes text-in {
+  0% {
+    transform: translate(0, -20px);
+    opacity: 0;
   }
 }
 </style>

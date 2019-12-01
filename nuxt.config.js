@@ -23,7 +23,7 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/style.scss',
+    '@/assets/reset.scss',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -39,7 +39,13 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    'nuxt-webfontloader'
   ],
+  webfontloader: {
+    google: {
+      families: ['Noto+Sans+JP', 'Play']
+    }
+  },
   /*
   ** Build configuration
   */

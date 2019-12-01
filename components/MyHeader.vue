@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1>
-      <nuxt-link to="/">Masayuki Nii</nuxt-link>
+      <nuxt-link to="/">msykn</nuxt-link>
     </h1>
     <div>
       <p>
@@ -22,17 +22,14 @@ header {
   display: flex;
   justify-content: space-between;
   background: #4fc3f7;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 0 1px -2px rgba(0, 0, 0, 0.12),
-    0 0 5px 0 rgba(0, 0, 0, 0.2);
-  margin-bottom: 40px;
 }
 
 h1 {
   font-size: 24px;
-  padding: 8px;
+  padding: 12px 8px;
 
   @media screen and (max-width: 425px) {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -57,7 +54,7 @@ p {
   padding: 0px 8px;
 
   @media screen and (max-width: 425px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 </style>
