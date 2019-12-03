@@ -9,6 +9,7 @@
         v-bind:text="work.text"
       />
     </div>
+    {{$store.state.issues.issues}}
   </div>
 </template>
 
