@@ -2,7 +2,7 @@
   <div>
     <page-title-area v-bind:title="$nuxt.$route.name" />
 <form name="contact" netlify-honeypot="bot-field" data-netlify="true" method="post">
-  <input type="hidden" name="form-name" value="contact" />
+  <input type="hidden" name="contact" value="contact" />
   <p class="hidden"  style="display: none;">
     <label>Don’t fill this out: <input name="bot-field"></label>
   </p>
