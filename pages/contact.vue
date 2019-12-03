@@ -1,9 +1,9 @@
 <template>
   <div>
     <page-title-area v-bind:title="$nuxt.$route.name" />
-<form netlify name="contact" method="POST" data-netlify="true">
+<form name="contact" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
-                <input name="mail" type="email" id="mail"/>
+                <input name="mail" type="email"/>
               <button type="submit">送信</button>
       </form>
   </div>
