@@ -1,19 +1,19 @@
 <template>
   <div>
-    <my-header />
+    <Header />
     <nuxt />
-    <my-footer />
+    <Footer />
   </div>
 </template>
 
 <script>
-import MyHeader from "~/components/MyHeader.vue";
-import MyFooter from "~/components/MyFooter.vue";
+import Header from "~/components/Header.vue";
+import Footer from "~/components/Footer.vue";
 
 export default {
   components: {
-    MyHeader,
-    MyFooter
+    Header,
+    Footer
   }
 };
 </script>
@@ -37,6 +37,4 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
-[v-cloak] { display: none }
 </style>

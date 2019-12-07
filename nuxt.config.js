@@ -83,4 +83,9 @@ export default {
       })
     }
   },
+  router: {
+    middleware: [
+      'getContentful'
+    ]
+  },
 }

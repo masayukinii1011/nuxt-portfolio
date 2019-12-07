@@ -3,19 +3,33 @@
     <h1>
       <nuxt-link to="/">msykn</nuxt-link>
     </h1>
-    <div>
-      <p>
-        <nuxt-link to="/about">About</nuxt-link>
-      </p>
-      <p>
-        <nuxt-link to="/works">Works</nuxt-link>
-      </p>
-      <p>
+    <template v-if="getCategories.length">
+    <ul>
+    <li v-for="category in getCategories">
+      <nuxt-link v-bind:to="category.fields.slug">{{category.fields.title}}</nuxt-link>
+    </li>
+      <li>
+        <nuxt-link to="/posts">Posts</nuxt-link>
+      </li>
+      <li>
         <nuxt-link to="/contact">Contact</nuxt-link>
-      </p>
-    </div>
+      </li>
+    </ul>
+    </template>
   </header>
 </template>
+
+<script>
+import client from '~/plugins/contentful'
+
+export default {
+  computed: {
+    getCategories() {
+      return this.$store.state.categories;
+    }
+  }
+}
+</script>
 
 <style scoped lang="scss">
 header {
@@ -43,15 +57,16 @@ a {
   }
 }
 
-div {
+ul {
   display: flex;
   align-items: center;
 }
 
-p {
+li {
   font-weight: bold;
   font-size: 18px;
   padding: 0px 8px;
+  list-style: none;
 
   @media screen and (max-width: 425px) {
     font-size: 14px;
