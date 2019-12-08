@@ -1,28 +1,39 @@
 <template>
   <div>
-    <template v-if="posts.length">
-      <ul v-for="(post, i) in posts" :key="i">
-        <li>{{ post.fields.title }}</li>
-        <ul>
-          <li>{{ post.fields.body }}</li>
-          <li>{{ post.fields.publishedAt }}</li>
-        </ul>
-        <nuxt-link :to="linkTo('posts', post)">この記事をみる</nuxt-link>
-      </ul>
-    </template>
-    <template v-else>
-      投稿された記事はありません。
-    </template>
+    <PageTitleArea v-bind:title="$nuxt.$route.name" />
+      <div v-if="blogs.length" class="detail-card-wrap">
+        <DetailCard
+          v-for="(blog, i) in blogs"
+          v-bind:key="i"
+          v-bind:title="blog.fields.title"
+          v-bind:text="blog.fields.body"
+          v-bind:category="blog.fields.category.fields.slug"
+          v-bind:slug="blog.fields.slug"
+        />
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
+import { mapState } from 'vuex';
+import PageTitleArea from "~/components/PageTitleArea.vue";
+import DetailCard from "~/components/DetailCard.vue";
 
 export default {
-computed: {
-    ...mapState(['posts']),
-    ...mapGetters(['linkTo'])
-  }
+  components: {
+    PageTitleArea,
+    DetailCard
+  },
+  computed: {
+    ...mapState(['blogs'])
+  },
 }
 </script>
+
+<style>
+.detail-card-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
+

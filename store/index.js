@@ -2,10 +2,13 @@ import client from '~/plugins/contentful'
 
 export const state = () => ({
   posts: [],
-  categories: [],
+  about: '',
+  works: [],
+  blogs: [],
+  categories: []
 })
 
-//state(個別に記事)にアクセスする用
+//stateにアクセスする用
 export const getters = {
   linkTo: () => (name, obj) => {
     return { name: `${name}-slug`, params: { slug: obj.fields.slug } }
@@ -17,6 +20,15 @@ export const mutations = {
   //Post
   setPosts(state, payload) {
     state.posts = payload
+  },
+  setAbout(state, payload) {
+    state.about = payload
+  },
+  setWorks(state, payload) {
+    state.works = payload
+  },
+  setBlogs(state, payload) {
+    state.blogs = payload
   },
   //Category
   setCategories(state, payload) {
@@ -30,18 +42,30 @@ export const actions = {
   async getPosts({ commit }) {
     await client.getEntries({
       content_type: process.env.CTF_BLOG_POST_TYPE_ID,
-      order: '-fields.publishedAt' // desc
-    }).then(res =>
-      commit('setPosts', res.items)
-    ).catch(console.error)
+      order: '-fields.publishedAt'
+    }).then((entries) => {
+      const about = entries.items.find((item) => {
+        return item.fields.category.fields.title === 'About'
+      })
+      const works = entries.items.filter((item) => {
+        return item.fields.category.fields.title === 'Works'
+      })
+      const blogs = entries.items.filter((item) => {
+        return item.fields.category.fields.title === 'Blogs'
+      })
+      commit('setPosts', entries.items)
+      commit('setAbout', about)
+      commit('setWorks', works)
+      commit('setBlogs', blogs)
+    }).catch(console.error)
   },
   //Category
   async getCategories({ commit }) {
     await client.getEntries({
       content_type: 'category',
       order: 'fields.id'
-    }).then(res =>
-      commit('setCategories', res.items)
+    }).then(entries =>
+      commit('setCategories', entries.items)
     ).catch(console.error)
   }
 }

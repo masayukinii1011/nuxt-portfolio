@@ -3,32 +3,31 @@
     <h1>
       <nuxt-link to="/">msykn</nuxt-link>
     </h1>
-    <template v-if="getCategories.length">
-    <ul>
-    <li v-for="category in getCategories">
-      <nuxt-link v-bind:to="category.fields.slug">{{category.fields.title}}</nuxt-link>
-    </li>
-      <li>
-        <nuxt-link to="/posts">Posts</nuxt-link>
-      </li>
-      <li>
-        <nuxt-link to="/contact">Contact</nuxt-link>
-      </li>
-    </ul>
+    <template v-if="categories.length">
+      <ul>
+        <li v-for="(category, i) in categories" v-bind:key="i">
+          <nuxt-link :to="{ name: category.fields.slug }">{{category.fields.title}}</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/posts">Posts</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/contact">Contact</nuxt-link>
+        </li>
+      </ul>
     </template>
   </header>
 </template>
 
 <script>
-import client from '~/plugins/contentful'
+import { mapState } from "vuex";
+import client from "~/plugins/contentful";
 
 export default {
   computed: {
-    getCategories() {
-      return this.$store.state.categories;
-    }
+    ...mapState(["categories"])
   }
-}
+};
 </script>
 
 <style scoped lang="scss">

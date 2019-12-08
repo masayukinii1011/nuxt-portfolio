@@ -1,9 +1,8 @@
 <template>
   <div>
     <template v-if="currentPost">
-      <PageTitleArea v-bind:title="currentPost.fields.title" />
-      <div class="publishedAt">{{ currentPost.fields.publishedAt }}</div>
-      <div class="body">{{ currentPost.fields.body }}</div>
+    <PageTitleArea v-bind:title="currentPost.fields.title" />
+    <div>{{ currentPost.fields.body }}</div>
     </template>
   </div>
 </template>
@@ -13,20 +12,19 @@ import client from '~/plugins/contentful';
 import PageTitleArea from "~/components/PageTitleArea.vue";
 
 export default {
-    components: {
+  components: {
     PageTitleArea
   },
   async asyncData({ payload, store, params, error }) {
-    const currentPost = payload || await store.state.blogs.find(blog => blog.fields.slug === params.slug)
+    const currentPost = payload || await store.state.works.find(work => work.fields.slug === params.slug)
     if (currentPost) {
       return { currentPost }
     } else {
       return error({ statusCode: 400 })
     }
   }
-}
+};
 </script>
 
 <style>
 </style>
-
