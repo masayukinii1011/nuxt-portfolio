@@ -77,14 +77,17 @@ export default {
         return [
           ...entries.items.map(item => {
             return { route: `posts/${item.fields.slug}`, payload: item }
-          }),/*
-          ...entries.items.map(item => {
-            if (item.fields.category.fields.slug === 'works') {
-              return { route: `works/${item.fields.slug}`, payload: item }
-            } else if (item.fields.category.fields.slug === 'blogs') {
-              return { route: `blogs/${item.fields.slug}`, payload: item }
-            }
-          }),*/
+          }),
+          ...entries.items.filter(item => {
+            return item.fields.category.fields.slug === 'works'
+          }).map(item => {
+            return { route: `works/${item.fields.slug}`, payload: item }
+          }),
+          ...entries.items.filter(item => {
+            return item.fields.category.fields.slug === 'blogs'
+          }).map(item => {
+            return { route: `blogs/${item.fields.slug}`, payload: item }
+          }),
         ]
       })
     }
