@@ -73,11 +73,18 @@ export default {
         client.getEntries({
           content_type: process.env.CTF_BLOG_POST_TYPE_ID
         })
-      ]).then(([posts]) => {
+      ]).then(([entries]) => {
         return [
-          ...posts.items.map(post => {
-            return { route: `posts/${post.fields.slug}`, payload: post }
-          })
+          ...entries.items.map(item => {
+            return { route: `posts/${item.fields.slug}`, payload: item }
+          }),
+          ...entries.items.map(item => {
+            if (item.fields.category.fields.slug === 'works') {
+              return { route: `works/${item.fields.slug}`, payload: item }
+            } else if (item.fields.category.fields.slug === 'blogs') {
+              return { route: `blogs/${item.fields.slug}`, payload: item }
+            }
+          }),
         ]
       })
     }

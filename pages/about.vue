@@ -7,15 +7,15 @@
 
 <script>
 import PageTitleArea from "~/components/PageTitleArea.vue";
-import {mapState} from 'vuex';
+import { mapState } from "vuex";
 
 export default {
   components: {
     PageTitleArea
   },
   computed: {
-    ...mapState(['about'])
-  },
+    ...mapState(["about"])
+  }
 };
 </script>
 

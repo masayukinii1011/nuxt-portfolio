@@ -38,20 +38,20 @@ export const mutations = {
 
 //Contentful APIを取得
 export const actions = {
-  //Post
+  //Blog Post
   async getPosts({ commit }) {
     await client.getEntries({
       content_type: process.env.CTF_BLOG_POST_TYPE_ID,
       order: '-fields.publishedAt'
-    }).then((entries) => {
-      const about = entries.items.find((item) => {
-        return item.fields.category.fields.title === 'About'
+    }).then(entries => {
+      const about = entries.items.find(item => {
+        return item.fields.category.fields.slug === 'about'
       })
-      const works = entries.items.filter((item) => {
-        return item.fields.category.fields.title === 'Works'
+      const works = entries.items.filter(item => {
+        return item.fields.category.fields.slug === 'works'
       })
-      const blogs = entries.items.filter((item) => {
-        return item.fields.category.fields.title === 'Blogs'
+      const blogs = entries.items.filter(item => {
+        return item.fields.category.fields.slug === 'blogs'
       })
       commit('setPosts', entries.items)
       commit('setAbout', about)
