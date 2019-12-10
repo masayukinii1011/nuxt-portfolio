@@ -46,12 +46,20 @@ export default {
   */
   modules: [
     'nuxt-webfontloader',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/markdownit'
   ],
   webfontloader: {
     google: {
       families: ['Noto+Sans+JP', 'Play']
     }
+  },
+  markdownit: {
+    injected: true, // $mdを利用してmarkdownをhtmlにレンダリング
+    breaks: true, // 改行コードを<br>に変換
+    html: true, // HTMLタグを有効
+    linkify: true, // URLに似たテキストをリンクに自動変換
+    typography: true,  // 言語に依存しないき置換+引用符を有効
   },
   /*
   ** Build configuration

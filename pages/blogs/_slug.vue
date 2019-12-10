@@ -9,7 +9,7 @@
           :alt="currentPost.fields.image.fields.title"
         />
       </div>
-      <div class="body">{{ currentPost.fields.body }}</div>
+      <div v-html="$md.render(currentPost.fields.body)"></div>
     </template>
   </div>
 </template>

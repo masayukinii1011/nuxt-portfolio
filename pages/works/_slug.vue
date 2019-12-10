@@ -8,7 +8,7 @@
           :alt="currentPost.fields.image.fields.title"
         />
       </div>
-      <div>{{ currentPost.fields.body }}</div>
+      <div v-html="$md.render(currentPost.fields.body)"></div>
     </template>
   </div>
 </template>

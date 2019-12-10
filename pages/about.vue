@@ -4,7 +4,7 @@
     <div>
       <img :src="about.fields.image.fields.file.url" :alt="about.fields.image.fields.title" />
     </div>
-    <div>{{about.fields.body}}</div>
+    <div v-html="$md.render(about.fields.body)"></div>
   </div>
 </template>
 
