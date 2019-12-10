@@ -42,7 +42,7 @@ export const actions = {
   async getPosts({ commit }) {
     await client.getEntries({
       content_type: process.env.CTF_BLOG_POST_TYPE_ID,
-      order: '-fields.publishedAt'
+      order: '-fields.publishDate'
     }).then(entries => {
       const about = entries.items.find(item => {
         return item.fields.category.fields.slug === 'about'

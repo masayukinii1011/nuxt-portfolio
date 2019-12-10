@@ -1,6 +1,9 @@
 <template>
   <div>
-    <page-title-area v-bind:title="$nuxt.$route.name" />
+    <page-title-area :title="$nuxt.$route.name" />
+    <div>
+      <img :src="about.fields.image.fields.file.url" :alt="about.fields.image.fields.title" />
+    </div>
     <div>{{about.fields.body}}</div>
   </div>
 </template>

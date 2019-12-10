@@ -2,6 +2,9 @@
   <div class="container">
     <nuxt-link :to="{ name: `${category}-slug`, params: { slug: slug }}">
       <div class="title">{{title}}</div>
+      <div>
+        <img :src="imageSrc" :alt="imageAlt" />
+      </div>
       <div class="text">{{text}}</div>
     </nuxt-link>
   </div>
@@ -13,7 +16,9 @@ export default {
     title: "",
     text: "",
     category: "",
-    slug: ""
+    slug: "",
+    imageSrc: "",
+    imageAlt: ""
   }
 };
 </script>
