@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/markdownit": "^1.2.7",
+    "bulma": "^0.8.0",
     "contentful": "^7.10.0",
     "node-sass": "^4.13.0",
     "nuxt": "^2.0.0",
