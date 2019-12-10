@@ -9,9 +9,6 @@
           <nuxt-link :to="{ name: category.fields.slug }">{{category.fields.title}}</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/posts">Posts</nuxt-link>
-        </li>
-        <li>
           <nuxt-link to="/contact">Contact</nuxt-link>
         </li>
       </ul>

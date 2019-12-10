@@ -1,26 +1,15 @@
 import client from '~/plugins/contentful'
 
 export const state = () => ({
-  posts: [],
   about: '',
   works: [],
   blogs: [],
   categories: []
 })
 
-//stateにアクセスする用
-export const getters = {
-  linkTo: () => (name, obj) => {
-    return { name: `${name}-slug`, params: { slug: obj.fields.slug } }
-  }
-}
-
 //データをstateにセット
 export const mutations = {
   //Post
-  setPosts(state, payload) {
-    state.posts = payload
-  },
   setAbout(state, payload) {
     state.about = payload
   },
@@ -53,7 +42,6 @@ export const actions = {
       const blogs = entries.items.filter(item => {
         return item.fields.category.fields.slug === 'blogs'
       })
-      commit('setPosts', entries.items)
       commit('setAbout', about)
       commit('setWorks', works)
       commit('setBlogs', blogs)

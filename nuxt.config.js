@@ -86,9 +86,6 @@ export default {
         })
       ]).then(([entries]) => {
         return [
-          ...entries.items.map(item => {
-            return { route: `posts/${item.fields.slug}`, payload: item }
-          }),
           ...entries.items.filter(item => {
             return item.fields.category.fields.slug === 'works'
           }).map(item => {
