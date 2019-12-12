@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
-    <PostList :title="$nuxt.$route.name" :posts="blogs" />
-  </div>
+  <section class="section">
+    <div class="container">
+      <PostList :title="$nuxt.$route.name" :posts="blogs" />
+    </div>
+  </section>
 </template>
 
 <script>

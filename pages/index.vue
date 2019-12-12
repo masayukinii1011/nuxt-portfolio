@@ -1,17 +1,21 @@
 <template>
-  <div>
-    <h1>
-      <nuxt-link to="/about">
-        <span
-          v-for="(t, index) in text"
-          :key="index"
-          class="item"
-          :style="{animationDelay: index*100+'ms'}"
-          v-text="t"
-        />
-      </nuxt-link>
-    </h1>
-  </div>
+  <section class="hero is-link is-fullheight-with-navbar">
+    <div class="hero-body">
+      <div class="container">
+        <p class="title has-text-centered">
+          <nuxt-link to="/about">
+            <span
+              v-for="(t, index) in text"
+              :key="index"
+              class="item has-text-white"
+              :style="{animationDelay: index*100+'ms'}"
+              v-text="t"
+            />
+          </nuxt-link>
+        </p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -25,29 +29,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
-div {
-  background: #4fc3f7;
-  margin-top: -64px;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .item {
-  font-family: 'Play';
+  font-family: "Play";
+  font-size: 3rem;
   letter-spacing: 0.04em;
   display: inline-block;
-  color: #fff;
   min-width: 0.3em;
-  font-size: 48px;
   animation: text-in 0.4s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
 
-  @media screen and (max-width: 767px) {
-    font-size: 36px;
+  @media (max-width: 767px) {
+    font-size: 2.2rem;
   }
-  @media screen and (max-width: 425px) {
-    font-size: 26px;
+  @media (max-width: 424px) {
+    font-size: 1.6rem;
   }
 }
 

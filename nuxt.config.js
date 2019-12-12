@@ -52,7 +52,7 @@ export default {
   ],
   webfontloader: {
     google: {
-      families: ['Noto+Sans+JP', 'Play']
+      families: ['Play']
     }
   },
   markdownit: {

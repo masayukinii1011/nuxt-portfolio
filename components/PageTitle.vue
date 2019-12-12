@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <h2>{{title}}</h2>
-  </div>
+  <section class="section">
+    <div class="container has-text-centered">
+      <h1 class="is-uppercase is-size-2 has-text-weight-bold title">{{title}}</h1>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -11,15 +13,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-div {
-  text-align: center;
-  padding: 32px 0;
-}
-
-h2 {
-  font-size: 32px;
-  color: #333;
-}
-</style>
