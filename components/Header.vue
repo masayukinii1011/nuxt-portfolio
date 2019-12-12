@@ -1,18 +1,30 @@
 <template>
   <header>
-    <h1>
-      <nuxt-link to="/">msykn</nuxt-link>
-    </h1>
-    <template v-if="categories.length">
-      <ul>
-        <li v-for="(category, i) in categories" v-bind:key="i">
-          <nuxt-link :to="{ name: category.fields.slug }">{{category.fields.title}}</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/contact">Contact</nuxt-link>
-        </li>
-      </ul>
-    </template>
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <nuxt-link class="navbar-item" to="/">
+            <h1>msykn</h1>
+          </nuxt-link>
+          <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div v-if="categories.length" class="navbar-end">
+            <nuxt-link
+              v-for="(category, i) in categories"
+              v-bind:key="i"
+              :to="{ name: category.fields.slug }"
+              class="navbar-item"
+            >{{category.fields.title}}</nuxt-link>
+            <nuxt-link to="/contact" class="navbar-item">Contact</nuxt-link>
+          </div>
+        </div>
+      </div>
+    </nav>
   </header>
 </template>
 
@@ -26,46 +38,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-header {
-  display: flex;
-  justify-content: space-between;
-  background: #4fc3f7;
-}
-
-h1 {
-  font-size: 24px;
-  padding: 12px 8px;
-
-  @media screen and (max-width: 425px) {
-    font-size: 18px;
-  }
-}
-
-a {
-  color: #fff;
-  transition: 0.1s ease-out;
-  padding-bottom: 2px;
-
-  &:hover {
-    border-bottom: 2px solid #fff;
-  }
-}
-
-ul {
-  display: flex;
-  align-items: center;
-}
-
-li {
-  font-weight: bold;
-  font-size: 18px;
-  padding: 0px 8px;
-  list-style: none;
-
-  @media screen and (max-width: 425px) {
-    font-size: 14px;
-  }
-}
-</style>

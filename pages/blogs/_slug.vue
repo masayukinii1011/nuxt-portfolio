@@ -1,26 +1,21 @@
 <template>
-  <div>
-    <template v-if="currentPost">
-      <PageTitleArea :title="currentPost.fields.title" />
-      <div class="publishedAt">{{ currentPost.fields.publishDate }}</div>
-      <div>
-        <img
-          :src="currentPost.fields.image.fields.file.url"
-          :alt="currentPost.fields.image.fields.title"
-        />
-      </div>
-      <div v-html="$md.render(currentPost.fields.body)"></div>
-    </template>
+  <div class="container">
+    <PostDetail
+      :title="currentPost.fields.title"
+      :body="$md.render(currentPost.fields.body)"
+      :imgSrc="currentPost.fields.image.fields.file.url"
+      :imgAlt="currentPost.fields.image.fields.title"
+    />
   </div>
 </template>
 
 <script>
 import client from "~/plugins/contentful";
-import PageTitleArea from "~/components/PageTitleArea.vue";
+import PostDetail from "~/components/PostDetail.vue";
 
 export default {
   components: {
-    PageTitleArea
+    PostDetail
   },
   async asyncData({ payload, store, params, error }) {
     const currentPost =
@@ -34,7 +29,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>
-

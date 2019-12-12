@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <page-title-area :title="$nuxt.$route.name" />
+  <div class="container">
+    <PageTitle :title="$nuxt.$route.name" />
     <div class="column is-one-third has-text-left">
       <form name="contact" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
@@ -34,14 +34,11 @@
 </template>
 
 <script>
-import PageTitleArea from "~/components/PageTitleArea.vue";
+import PageTitle from "~/components/PageTitle.vue";
 
 export default {
   components: {
-    PageTitleArea
+    PageTitle
   }
 };
 </script>
-
-<style scoped lang="scss">
-</style>
