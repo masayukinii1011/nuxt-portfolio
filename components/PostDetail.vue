@@ -1,10 +1,10 @@
 <template>
   <div>
     <PageTitle :title="title" />
-    <div>
+    <div v-if="imgSrc">
       <img :src="imgSrc" :alt="imgAlt" />
     </div>
-    <div v-html="body"></div>
+    <div class="text-body" v-html="body"></div>
   </div>
 </template>
 
@@ -23,3 +23,19 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.text-body {
+  h3 {
+    color: #363636;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.125;
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+}
+</style>

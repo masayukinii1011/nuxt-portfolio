@@ -7,25 +7,29 @@
           <form name="contact" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="contact" />
             <div class="field">
-              <label class="label">Name</label>
+              <label class="label is-size-5">Name</label>
               <div class="control">
                 <input class="input is-medium" name="name" type="text" />
               </div>
             </div>
             <div class="field">
-              <label class="label">Email</label>
+              <label class="label is-size-5">Email</label>
               <div class="control">
                 <input class="input is-medium" name="email" type="email" />
               </div>
             </div>
             <div class="field">
-              <label class="label">Message</label>
+              <label class="label is-size-5">Message</label>
               <div class="control">
                 <textarea class="textarea is-large" name="message"></textarea>
               </div>
             </div>
             <div class="control">
-              <button type="submit" class="button is-success is-fullwidth is-large">Send Message</button>
+              <button
+                :disabled="true"
+                type="submit"
+                class="button is-success is-fullwidth is-large"
+              >Send Message</button>
             </div>
           </form>
         </div>

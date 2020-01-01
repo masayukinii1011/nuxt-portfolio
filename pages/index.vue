@@ -3,15 +3,13 @@
     <div class="hero-body">
       <div class="container">
         <p class="title has-text-centered">
-          <nuxt-link to="/about">
-            <span
-              v-for="(t, index) in text"
-              :key="index"
-              class="item has-text-white"
-              :style="{animationDelay: index*100+'ms'}"
-              v-text="t"
-            />
-          </nuxt-link>
+          <span
+            v-for="(t, index) in text"
+            :key="index"
+            class="item has-text-white"
+            :style="{animationDelay: index*100+'ms'}"
+            v-text="t"
+          />
         </p>
       </div>
     </div>
@@ -35,7 +33,14 @@ export default {
   letter-spacing: 0.04em;
   display: inline-block;
   min-width: 0.3em;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s ease-out;
   animation: text-in 0.4s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
+
+  &:hover {
+    transform: translate(0, -10px);
+  }
 
   @media (max-width: 767px) {
     font-size: 2.2rem;

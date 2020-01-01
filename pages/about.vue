@@ -1,12 +1,7 @@
 <template>
   <section class="section">
     <div class="container">
-      <PostDetail
-        :title="$nuxt.$route.name"
-        :body="$md.render(about.fields.body)"
-        :imgSrc="about.fields.image.fields.file.url"
-        :imgAlt="about.fields.image.fields.title"
-      />
+      <PostDetail :title="$nuxt.$route.name" :body="$md.render(about.fields.body)" />
     </div>
   </section>
 </template>

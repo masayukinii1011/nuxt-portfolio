@@ -4,7 +4,7 @@
       <div class="container">
         <div class="navbar-brand has-background-link">
           <nuxt-link class="navbar-item" to="/">
-            <h1 class="has-text-weight-bold has-text-white">msykn</h1>
+            <h1 class="is-size-4 has-text-weight-bold has-text-white">msykn</h1>
           </nuxt-link>
           <a
             @click="isOpen = !isOpen"

@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="container has-text-centered">
-      <h1 class="is-uppercase is-size-2 has-text-weight-bold title">{{title}}</h1>
+      <h2 class="is-uppercase has-text-weight-bold title">{{title}}</h2>
     </div>
   </section>
 </template>
