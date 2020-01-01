@@ -25,7 +25,7 @@
               </div>
             </div>
             <div class="control">
-              <button type="submit" class="button is-link is-fullwidth is-large">Send Message</button>
+              <button type="submit" class="button is-success is-fullwidth is-large">Send Message</button>
             </div>
           </form>
         </div>

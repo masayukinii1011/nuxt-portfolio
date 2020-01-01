@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div :class="{ wrapper : this.$route.name !== 'index' }">
     <Header />
     <nuxt />
-    <Footer />
+    <Footer v-if="this.$route.name !== 'index'" />
   </div>
 </template>
 
@@ -203,5 +203,11 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  padding-bottom: 52px;
+  min-height: 100vh;
 }
 </style>
