@@ -211,6 +211,10 @@ html {
   min-height: 100vh;
 }
 
+.container {
+  max-width: 1024px;
+}
+
 .page-enter-active,
 .page-leave-active {
   transition: 0.16s ease-out;

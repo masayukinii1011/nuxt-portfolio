@@ -20,7 +20,8 @@
             <span aria-hidden="true"></span>
           </a>
         </div>
-        <div class="navbar-menu has-background-link is-shadowless" id="navbarMenu">
+        <!--PC-->
+        <div class="navbar-menu has-background-link is-shadowless is-hidden-touch" id="navbarMenu">
           <div v-if="categories.length" class="navbar-end">
             <nuxt-link
               v-for="(category, i) in categories"
@@ -31,11 +32,11 @@
             <nuxt-link to="/contact" class="navbar-item has-text-weight-bold has-text-white">Contact</nuxt-link>
           </div>
         </div>
+        <!--Tablet-->
         <transition>
           <div
             v-if="isOpen"
-            :class="{'is-active': isOpen}"
-            class="navbar-menu has-background-link is-shadowless"
+            class="navbar-menu has-background-link is-shadowless is-active is-hidden-desktop"
             id="navbarMenu"
           >
             <div v-if="categories.length" class="navbar-end">
