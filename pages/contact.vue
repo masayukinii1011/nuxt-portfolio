@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="container">
-      <PageTitle :title="$nuxt.$route.name" />
+      <PageTitle :title="$nuxt.$route.name.toUpperCase()" />
       <div class="columns is-centered">
         <div class="column is-half">
           <form name="contact" method="post" data-netlify="true">

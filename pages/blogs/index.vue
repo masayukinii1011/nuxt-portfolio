@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="container">
-      <PostList :title="$nuxt.$route.name" :posts="blogs" />
+      <PostList :title="$nuxt.$route.name.toUpperCase()" :posts="blogs" />
     </div>
   </section>
 </template>

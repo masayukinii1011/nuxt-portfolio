@@ -13,7 +13,7 @@
               </figure>
             </div>
             <div class="card-content">
-              <p class="title has-text-centered">{{post.fields.title}}</p>
+              <p class="title is-size-4 has-text-centered">{{post.fields.title}}</p>
             </div>
           </nuxt-link>
         </div>
@@ -37,3 +37,13 @@ export default {
   }
 };
 </script>
+
+<style scoped lang="scss">
+.card-content {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #eee;
+}
+</style>

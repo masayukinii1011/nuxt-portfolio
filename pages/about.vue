@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="container">
-      <PostDetail :title="$nuxt.$route.name" :body="$md.render(about.fields.body)" />
+      <PostDetail :title="$nuxt.$route.name.toUpperCase()" :body="$md.render(about.fields.body)" />
     </div>
   </section>
 </template>
