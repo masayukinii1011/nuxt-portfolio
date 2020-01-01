@@ -210,4 +210,14 @@ html {
   padding-bottom: 52px;
   min-height: 100vh;
 }
+
+.page-enter-active,
+.page-leave-active {
+  transition: 0.16s ease-out;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(2px);
+}
 </style>
