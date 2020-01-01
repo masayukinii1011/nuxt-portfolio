@@ -8,14 +8,14 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Masayuki Nii Portfolio',
+    title: 'msykn portfolio',
     htmlAttrs: {
       lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Masayuki Nii Portfolio' }
+      { hid: 'description', name: 'description', content: 'msykn portfolio' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
