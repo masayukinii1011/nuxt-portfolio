@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <p class="is-size-4" v-else>There is no Post.</p>
+      <p class="is-size-4" v-else>There is no post.</p>
     </div>
   </section>
 </template>

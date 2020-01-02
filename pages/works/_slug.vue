@@ -3,6 +3,8 @@
     <PostDetail
       :title="currentPost.fields.title"
       :body="$md.render(currentPost.fields.body)"
+      :githubLink="currentPost.fields.githubLink"
+      :demoLink="currentPost.fields.demoLink"
       :imgSrc="currentPost.fields.image.fields.file.url"
       :imgAlt="currentPost.fields.image.fields.title"
     />

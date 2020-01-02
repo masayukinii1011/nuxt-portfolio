@@ -5,6 +5,12 @@
       <div class="image-wrapper" v-if="imgSrc">
         <img :src="imgSrc" :alt="imgAlt" />
       </div>
+      <div v-if="githubLink || demoLink" class="button-wrap">
+        <a v-if="githubLink" :href="githubLink" target="_blank" class="button">
+          <img src="/github_logo.png" alt="github logo" />
+        </a>
+        <a v-if="demoLink" :href="demoLink" target="_blank" class="button">DEMO</a>
+      </div>
       <div class="text-body" v-html="body"></div>
     </div>
   </section>
@@ -20,6 +26,8 @@ export default {
   props: {
     title: "",
     body: "",
+    githubLink: "",
+    demoLink: "",
     imgSrc: "",
     imgAlt: ""
   }
@@ -30,7 +38,23 @@ export default {
 .post-detail-wrapper {
   .image-wrapper {
     max-width: 640px;
-    margin: 0 auto 32px;
+    margin: 0 auto 16px;
+  }
+
+  .button-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+    margin: 0 auto 16px;
+
+    .button {
+      width: 46%;
+      font-weight: 600;
+
+      img {
+        transform: scale(1.3);
+      }
+    }
   }
 
   .text-body {
