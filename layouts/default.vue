@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ wrapper : this.$route.name !== 'index' }">
+  <div :class="{ hasFooterWrapper : this.$route.name !== 'index' }">
     <Header />
     <nuxt />
     <Footer v-if="this.$route.name !== 'index'" />
@@ -205,7 +205,7 @@ html {
   margin: 0;
 }
 
-.wrapper {
+.hasFooterWrapper {
   position: relative;
   padding-bottom: 52px;
   min-height: 100vh;

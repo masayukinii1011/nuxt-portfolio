@@ -1,25 +1,31 @@
 <template>
-  <div>
-    <PageTitle :title="title" />
-    <div v-if="posts.length" class="columns is-multiline is-variable is-4">
-      <div v-for="(post, i) in posts" :key="i" class="column is-half">
-        <div class="card">
-          <nuxt-link
-            :to="{ name: `${post.fields.category.fields.slug}-slug`, params: { slug: post.fields.slug }}"
-          >
-            <div class="card-image">
-              <figure class="image is-2by1">
-                <img :src="post.fields.image.fields.file.url" :alt="post.fields.image.fields.title" />
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-size-4 has-text-centered">{{post.fields.title}}</p>
-            </div>
-          </nuxt-link>
+  <section class="section">
+    <div class="container">
+      <PageTitle :title="title" />
+      <div v-if="posts.length" class="columns is-multiline is-variable is-4">
+        <div v-for="(post, i) in posts" :key="i" class="column is-half">
+          <div class="card">
+            <nuxt-link
+              :to="{ name: `${post.fields.category.fields.slug}-slug`, params: { slug: post.fields.slug }}"
+            >
+              <div class="card-image">
+                <figure class="image is-2by1">
+                  <img
+                    :src="post.fields.image.fields.file.url"
+                    :alt="post.fields.image.fields.title"
+                  />
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title is-size-4 has-text-centered">{{post.fields.title}}</p>
+              </div>
+            </nuxt-link>
+          </div>
         </div>
       </div>
+      <p class="is-size-4" v-else>There is no Post.</p>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <PageTitle :title="title" />
-    <div v-if="imgSrc">
-      <img :src="imgSrc" :alt="imgAlt" />
+  <section class="section post-detail-wrapper">
+    <div class="container">
+      <PageTitle :title="title" />
+      <div class="image-wrapper" v-if="imgSrc">
+        <img :src="imgSrc" :alt="imgAlt" />
+      </div>
+      <div class="text-body" v-html="body"></div>
     </div>
-    <div class="text-body" v-html="body"></div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -25,17 +27,24 @@ export default {
 </script>
 
 <style lang="scss">
-.text-body {
-  h3 {
-    color: #363636;
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1.125;
-    margin-bottom: 8px;
+.post-detail-wrapper {
+  .image-wrapper {
+    max-width: 640px;
+    margin: 0 auto 32px;
   }
 
-  p {
-    margin-bottom: 16px;
+  .text-body {
+    h3 {
+      color: #363636;
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 1.125;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
   }
 }
 </style>

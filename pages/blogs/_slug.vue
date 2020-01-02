@@ -1,14 +1,12 @@
 <template>
-  <section class="section">
-    <div class="container">
-      <PostDetail
-        :title="currentPost.fields.title"
-        :body="$md.render(currentPost.fields.body)"
-        :imgSrc="currentPost.fields.image.fields.file.url"
-        :imgAlt="currentPost.fields.image.fields.title"
-      />
-    </div>
-  </section>
+  <div>
+    <PostDetail
+      :title="currentPost.fields.title"
+      :body="$md.render(currentPost.fields.body)"
+      :imgSrc="currentPost.fields.image.fields.file.url"
+      :imgAlt="currentPost.fields.image.fields.title"
+    />
+  </div>
 </template>
 
 <script>
