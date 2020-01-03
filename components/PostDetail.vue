@@ -69,6 +69,15 @@ export default {
       margin-bottom: 16px;
     }
 
+    h4 {
+      color: #363636;
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.125;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
     p {
       color: #363636;
       line-height: 1.25;
@@ -76,7 +85,12 @@ export default {
       margin-bottom: 16px;
     }
 
-    ol {
+    ul {
+      list-style: initial;
+    }
+
+    ol,
+    ul {
       margin-left: 20px;
     }
 
