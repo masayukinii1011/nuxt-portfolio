@@ -58,16 +58,31 @@ export default {
   }
 
   .text-body {
+    word-break: break-all;
+
     h3 {
       color: #363636;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 600;
       line-height: 1.125;
-      margin-bottom: 8px;
+      margin-top: 48px;
+      margin-bottom: 16px;
     }
 
     p {
+      color: #363636;
+      line-height: 1.25;
+      font-size: 0.9rem;
       margin-bottom: 16px;
+    }
+
+    ol {
+      margin-left: 20px;
+    }
+
+    code {
+      color: #363636;
+      background-color: #eee;
     }
   }
 }
