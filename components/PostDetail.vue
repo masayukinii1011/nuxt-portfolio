@@ -8,7 +8,7 @@
       <div
         v-if="githubLink || demoLink"
         class="button-wrap"
-        :class="{'button-wrap-about' : $nuxt.$route.name === 'about'}"
+        :class="{'about' : $route.name === 'about'}"
       >
         <a v-if="githubLink" :href="githubLink" target="_blank" class="button">
           <img src="/github_logo.png" alt="github logo" />
@@ -51,7 +51,7 @@ export default {
     width: 240px;
     margin: 0 auto 16px;
 
-    &-about {
+    &.about {
       margin: 0 auto -16px 0;
 
       .button {
