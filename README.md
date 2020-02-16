@@ -1,26 +1,5 @@
 # nuxt-portfolio
 
-> My astonishing Nuxt.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-$ npm run install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-
 ### Nuxt.js
 このポートフォリオサイトはNuxt.jsで作成しました。
 [Nuxt.js](https://ja.nuxtjs.org/)
@@ -68,3 +47,23 @@ Bootstrapと違いjQuery依存しておらず、CSSのみで軽く使いやす�
 ヘッダー部分は下記を参考に作成しました。
 参考記事：
 https://qiita.com/seki19/items/649b317c10e84fb36e06
+
+
+## Build Setup
+
+``` bash
+# install dependencies
+$ npm run install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm run start
+
+# generate static project
+$ npm run generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
