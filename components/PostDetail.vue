@@ -5,7 +5,11 @@
       <div class="image-wrapper" v-if="imgSrc">
         <img :src="imgSrc" :alt="imgAlt" />
       </div>
-      <div v-if="githubLink || demoLink" class="button-wrap">
+      <div
+        v-if="githubLink || demoLink"
+        class="button-wrap"
+        :class="{'button-wrap-about' : $nuxt.$route.name === 'about'}"
+      >
         <a v-if="githubLink" :href="githubLink" target="_blank" class="button">
           <img src="/github_logo.png" alt="github logo" />
         </a>
@@ -46,6 +50,14 @@ export default {
     justify-content: space-between;
     width: 240px;
     margin: 0 auto 16px;
+
+    &-about {
+      margin: 0 auto -16px 0;
+
+      .button {
+        width: 46%;
+      }
+    }
 
     .button {
       width: 46%;

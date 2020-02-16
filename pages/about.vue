@@ -1,6 +1,10 @@
 <template>
   <div>
-    <PostDetail :title="$nuxt.$route.name.toUpperCase()" :body="$md.render(about.fields.body)" />
+    <PostDetail
+      :title="$nuxt.$route.name.toUpperCase()"
+      :body="$md.render(about.fields.body)"
+      :githubLink="about.fields.githubLink"
+    />
   </div>
 </template>
 
