@@ -43,6 +43,10 @@ export default {
   .image-wrapper {
     max-width: 640px;
     margin: 0 auto 16px;
+
+    img {
+      border: 1px solid #eee;
+    }
   }
 
   .button-wrap {
