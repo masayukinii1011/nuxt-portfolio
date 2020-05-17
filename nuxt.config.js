@@ -91,12 +91,7 @@ export default {
             return item.fields.category.fields.slug === 'works'
           }).map(item => {
             return { route: `works/${item.fields.slug}`, payload: item }
-          }),
-          ...entries.items.filter(item => {
-            return item.fields.category.fields.slug === 'blogs'
-          }).map(item => {
-            return { route: `blogs/${item.fields.slug}`, payload: item }
-          }),
+          })
         ]
       })
     }

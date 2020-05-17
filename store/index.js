@@ -3,7 +3,6 @@ import client from '~/plugins/contentful'
 export const state = () => ({
   about: '',
   works: [],
-  blogs: [],
   categories: []
 })
 
@@ -15,9 +14,6 @@ export const mutations = {
   },
   setWorks(state, payload) {
     state.works = payload
-  },
-  setBlogs(state, payload) {
-    state.blogs = payload
   },
   //Category
   setCategories(state, payload) {
@@ -39,12 +35,8 @@ export const actions = {
       const works = entries.items.filter(item => {
         return item.fields.category.fields.slug === 'works'
       })
-      const blogs = entries.items.filter(item => {
-        return item.fields.category.fields.slug === 'blogs'
-      })
       commit('setAbout', about)
       commit('setWorks', works)
-      commit('setBlogs', blogs)
     }).catch(console.error)
   },
   //Category
