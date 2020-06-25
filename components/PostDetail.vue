@@ -5,15 +5,14 @@
       <div class="image-wrapper" v-if="imgSrc">
         <img :src="imgSrc" :alt="imgAlt" />
       </div>
-      <div
-        v-if="githubLink || demoLink"
-        class="button-wrap"
-        :class="{'about' : $route.name === 'about'}"
-      >
+      <div v-if="githubLink || demoLink" class="button-wrap">
         <a v-if="githubLink" :href="githubLink" target="_blank" class="button">
           <img src="/github_logo.png" alt="github logo" />
         </a>
-        <a v-if="demoLink" :href="demoLink" target="_blank" class="button">DEMO</a>
+        <a v-if="demoLink" :href="demoLink" target="_blank" class="button">
+          <img v-if="this.$route.name === 'about'" src="/qiita_logo.png" alt="qiita logo" />
+          <span v-else>DEMO</span>
+        </a>
       </div>
       <div class="text-body" v-html="body"></div>
     </div>
@@ -54,14 +53,6 @@ export default {
     justify-content: space-between;
     width: 240px;
     margin: 0 auto 16px;
-
-    &.about {
-      margin: 0 auto -16px 0;
-
-      .button {
-        width: 46%;
-      }
-    }
 
     .button {
       width: 46%;
