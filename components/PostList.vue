@@ -6,7 +6,10 @@
         <div v-for="(post, i) in posts" :key="i" class="column is-half">
           <div class="card">
             <nuxt-link
-              :to="{ name: `${post.fields.category.fields.slug}-slug`, params: { slug: post.fields.slug }}"
+              :to="{
+                name: `${post.fields.category.fields.slug}-slug`,
+                params: { slug: post.fields.slug }
+              }"
             >
               <div class="card-image">
                 <figure class="image is-2by1">
@@ -18,7 +21,9 @@
                 </figure>
               </div>
               <div class="card-content">
-                <p class="title is-size-4 has-text-centered">{{post.fields.title}}</p>
+                <p class="title is-size-4 has-text-centered">
+                  {{ post.fields.title }}
+                </p>
               </div>
             </nuxt-link>
           </div>
@@ -29,14 +34,12 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
 import PageTitle from "~/components/PageTitle.vue";
-import PostList from "~/components/PostList.vue";
 
 export default {
   components: {
-    PageTitle,
-    PostList
+    PageTitle
   },
   props: {
     title: "",

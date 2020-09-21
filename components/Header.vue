@@ -8,7 +8,7 @@
           </nuxt-link>
           <a
             @click="isOpen = !isOpen"
-            :class="{'is-active': isOpen}"
+            :class="{ 'is-active': isOpen }"
             class="navbar-burger burger has-text-white"
             role="button"
             aria-label="menu"
@@ -21,15 +21,23 @@
           </a>
         </div>
         <!--PC-->
-        <div class="navbar-menu has-background-link is-shadowless is-hidden-touch" id="navbarMenu">
+        <div
+          class="navbar-menu has-background-link is-shadowless is-hidden-touch"
+          id="navbarMenu"
+        >
           <div v-if="categories.length" class="navbar-end">
             <nuxt-link
               v-for="(category, i) in categories"
               :key="i"
               :to="{ name: category.fields.slug }"
               class="navbar-item has-text-weight-bold has-text-white"
-            >{{category.fields.title}}</nuxt-link>
-            <nuxt-link to="/contact" class="navbar-item has-text-weight-bold has-text-white">Contact</nuxt-link>
+              >{{ category.fields.title }}</nuxt-link
+            >
+            <nuxt-link
+              to="/contact"
+              class="navbar-item has-text-weight-bold has-text-white"
+              >Contact</nuxt-link
+            >
           </div>
         </div>
         <!--Tablet-->
@@ -46,12 +54,14 @@
                 :key="i"
                 :to="{ name: category.fields.slug }"
                 class="navbar-item has-text-weight-bold has-text-white"
-              >{{category.fields.title}}</nuxt-link>
+                >{{ category.fields.title }}</nuxt-link
+              >
               <nuxt-link
                 @click.native="isOpen = false"
                 to="/contact"
                 class="navbar-item has-text-weight-bold has-text-white"
-              >Contact</nuxt-link>
+                >Contact</nuxt-link
+              >
             </div>
           </div>
         </transition>
@@ -60,9 +70,8 @@
   </header>
 </template>
 
-<script>
+<script lang="ts">
 import { mapState } from "vuex";
-import client from "~/plugins/contentful";
 
 export default {
   data: function() {

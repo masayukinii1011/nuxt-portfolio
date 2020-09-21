@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { mapState } from "vuex";
 import PostList from "~/components/PostList.vue";
 
@@ -17,4 +17,3 @@ export default {
   }
 };
 </script>
-

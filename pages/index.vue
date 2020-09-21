@@ -7,7 +7,7 @@
             v-for="(t, index) in text"
             :key="index"
             class="item has-text-white"
-            :style="{animationDelay: index*100+'ms'}"
+            :style="{ animationDelay: index * 100 + 'ms' }"
             v-text="t"
           />
         </p>
@@ -16,7 +16,7 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   data() {
     return {

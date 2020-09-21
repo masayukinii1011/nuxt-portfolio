@@ -9,19 +9,33 @@
             <div class="field">
               <label class="label is-size-5">Name</label>
               <div class="control">
-                <input v-model="name" class="input is-medium" name="name" type="text" />
+                <input
+                  v-model="name"
+                  class="input is-medium"
+                  name="name"
+                  type="text"
+                />
               </div>
             </div>
             <div class="field">
               <label class="label is-size-5">Email</label>
               <div class="control">
-                <input v-model="email" class="input is-medium" name="email" type="email" />
+                <input
+                  v-model="email"
+                  class="input is-medium"
+                  name="email"
+                  type="email"
+                />
               </div>
             </div>
             <div class="field">
               <label class="label is-size-5">Message</label>
               <div class="control">
-                <textarea v-model="message" class="textarea is-large" name="message"></textarea>
+                <textarea
+                  v-model="message"
+                  class="textarea is-large"
+                  name="message"
+                ></textarea>
               </div>
             </div>
             <div class="control">
@@ -29,7 +43,9 @@
                 :disabled="checkForm"
                 type="submit"
                 class="button is-success is-fullwidth is-large"
-              >Send Message</button>
+              >
+                Send Message
+              </button>
             </div>
           </form>
         </div>
@@ -38,7 +54,7 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
 import PageTitle from "~/components/PageTitle.vue";
 
 export default {

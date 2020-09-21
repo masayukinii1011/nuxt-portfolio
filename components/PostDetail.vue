@@ -10,7 +10,11 @@
           <img src="/github_logo.png" alt="github logo" />
         </a>
         <a v-if="demoLink" :href="demoLink" target="_blank" class="button">
-          <img v-if="this.$route.name === 'about'" src="/qiita_logo.png" alt="qiita logo" />
+          <img
+            v-if="this.$route.name === 'about'"
+            src="/qiita_logo.png"
+            alt="qiita logo"
+          />
           <span v-else>DEMO</span>
         </a>
       </div>
@@ -19,7 +23,7 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
 import PageTitle from "~/components/PageTitle.vue";
 
 export default {

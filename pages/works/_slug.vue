@@ -11,8 +11,7 @@
   </div>
 </template>
 
-<script>
-import client from "~/plugins/contentful";
+<script lang="ts">
 import PostDetail from "~/components/PostDetail.vue";
 
 export default {
@@ -22,7 +21,9 @@ export default {
   async asyncData({ payload, store, params, error }) {
     const currentPost =
       payload ||
-      (await store.state.works.find(work => work.fields.slug === params.slug));
+      (await store.state.works.find(
+        (work: { fields: { slug: any } }) => work.fields.slug === params.slug
+      ));
     if (currentPost) {
       return { currentPost };
     } else {
