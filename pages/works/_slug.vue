@@ -18,7 +18,17 @@ export default {
   components: {
     PostDetail
   },
-  async asyncData({ payload, store, params, error }) {
+  async asyncData({
+    payload,
+    store,
+    params,
+    error
+  }: {
+    payload: any;
+    store: any;
+    params: any;
+    error: any;
+  }) {
     const currentPost =
       payload ||
       (await store.state.works.find(
