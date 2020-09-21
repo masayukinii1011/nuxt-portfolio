@@ -3,7 +3,9 @@ require('dotenv').config()
 const client = require('./plugins/contentful').default
 
 export default {
-  mode: 'universal',
+  ssr: 'true',
+
+  target: 'static',
   /*
   ** Headers of the page
   */
