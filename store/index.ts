@@ -1,4 +1,5 @@
 import { MutationTree, ActionTree } from "vuex";
+import { getAccessorType } from "typed-vuex";
 import client from "~/plugins/contentful";
 
 export const state = () => ({
@@ -49,3 +50,9 @@ export const actions: ActionTree<RootState, RootState> = {
       .catch(console.error);
   }
 };
+
+export const accessorType = getAccessorType({
+  state,
+  mutations,
+  actions
+});
