@@ -21,6 +21,7 @@
     "contentful": "^7.14.4",
     "node-sass": "^4.14.1",
     "nuxt": "^2.14.5",
+    "nuxt-typed-vuex": "^0.1.21",
     "nuxt-webfontloader": "^1.1.0",
     "sass-loader": "^10.0.2",
     "serialize-javascript": "^5.0.1",

@@ -38,7 +38,7 @@ const config: NuxtConfig = {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxt/typescript-build"],
+  buildModules: ["@nuxt/typescript-build", "nuxt-typed-vuex"],
   /*
    ** Nuxt.js modules
    */
