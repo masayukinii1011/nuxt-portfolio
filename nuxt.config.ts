@@ -1,61 +1,51 @@
-require('dotenv').config()
+import { NuxtConfig } from "@nuxt/types";
 
-const client = require('./plugins/contentful').default
+require("dotenv").config();
 
-export default {
-  ssr: 'true',
+const client = require("./plugins/contentful").default;
 
-  target: 'static',
+const config: NuxtConfig = {
+  ssr: "true",
+
+  target: "static",
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
-    title: 'msykn portfolio',
+    title: "msykn portfolio",
     htmlAttrs: {
-      lang: 'ja'
+      lang: "ja"
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'msykn portfolio' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "msykn portfolio" }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
+   ** Customize the progress-bar color
+   */
+  loading: { color: "#fff" },
   /*
-  ** Global CSS
-  */
-  css: [
-    { src: 'bulma/bulma.sass', lang: 'sass' }
-  ],
+   ** Global CSS
+   */
+  css: [{ src: "bulma/bulma.sass", lang: "sass" }],
   /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-    'plugins/contentful'
-  ],
+   ** Plugins to load before mounting the App
+   */
+  plugins: ["plugins/contentful"],
   /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-    '@nuxt/typescript-build'
-  ],
+   ** Nuxt.js dev-modules
+   */
+  buildModules: ["@nuxt/typescript-build"],
   /*
-  ** Nuxt.js modules
-  */
-  modules: [
-    'nuxt-webfontloader',
-    '@nuxtjs/dotenv',
-    '@nuxtjs/markdownit'
-  ],
+   ** Nuxt.js modules
+   */
+  modules: ["nuxt-webfontloader", "@nuxtjs/dotenv", "@nuxtjs/markdownit"],
   webfontloader: {
     google: {
-      families: ['Play']
+      families: ["Play"]
     }
   },
   markdownit: {
@@ -63,17 +53,16 @@ export default {
     breaks: true, // 改行コードを<br>に変換
     html: true, // HTMLタグを有効
     linkify: true, // URLに似たテキストをリンクに自動変換
-    typography: true,  // 言語に依存しないき置換+引用符を有効
+    typography: true // 言語に依存しないき置換+引用符を有効
   },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-    }
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {}
   },
   env: {
     // contentful
@@ -90,18 +79,24 @@ export default {
         })
       ]).then(([entries]) => {
         return [
-          ...entries.items.filter(item => {
-            return item.fields.category.fields.slug === 'works'
-          }).map(item => {
-            return { route: `works/${item.fields.slug}`, payload: item }
-          })
-        ]
-      })
+          ...entries.items
+            .filter(
+              (item: {
+                fields: { category: { fields: { slug: string } } };
+              }) => {
+                return item.fields.category.fields.slug === "works";
+              }
+            )
+            .map((item: { fields: { slug: string } }) => {
+              return { route: `works/${item.fields.slug}`, payload: item };
+            })
+        ];
+      });
     }
   },
   router: {
-    middleware: [
-      'getContentful'
-    ]
-  },
-}
+    middleware: ["getContentful"]
+  }
+};
+
+export default config;
