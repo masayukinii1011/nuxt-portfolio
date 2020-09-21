@@ -24,21 +24,40 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from "@vue/composition-api";
 import PageTitle from "~/components/PageTitle.vue";
 
-export default {
+export default defineComponent({
   components: {
     PageTitle
   },
   props: {
-    title: "",
-    body: "",
-    githubLink: "",
-    demoLink: "",
-    imgSrc: "",
-    imgAlt: ""
+    title: {
+      type: String,
+      required: true
+    },
+    body: {
+      type: String,
+      required: true
+    },
+    githubLink: {
+      type: String,
+      required: true
+    },
+    demoLink: {
+      type: String,
+      required: true
+    },
+    imgSrc: {
+      type: String,
+      required: true
+    },
+    imgAlt: {
+      type: String,
+      required: true
+    }
   }
-};
+});
 </script>
 
 <style lang="scss">

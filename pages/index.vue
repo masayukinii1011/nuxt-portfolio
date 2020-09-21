@@ -17,13 +17,16 @@
 </template>
 
 <script lang="ts">
-export default {
-  data() {
+import { defineComponent, ref } from "@vue/composition-api";
+
+export default defineComponent({
+  setup() {
+    const text = ref("My Portfolio Website");
     return {
-      text: "My Portfolio Website"
+      text
     };
   }
-};
+});
 </script>
 
 <style scoped lang="scss">

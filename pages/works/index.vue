@@ -5,15 +5,18 @@
 </template>
 
 <script lang="ts">
-import { mapState } from "vuex";
+import { defineComponent, computed } from "@vue/composition-api";
 import PostList from "~/components/PostList.vue";
 
-export default {
+export default defineComponent({
   components: {
     PostList
   },
-  computed: {
-    ...mapState(["works"])
+  setup(_props, { root }) {
+    const works = computed(() => root.$accessor.works);
+    return {
+      works
+    };
   }
-};
+});
 </script>

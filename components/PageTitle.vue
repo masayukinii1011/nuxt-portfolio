@@ -7,9 +7,14 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from "@vue/composition-api";
+
+export default defineComponent({
   props: {
-    title: ""
+    title: {
+      type: String,
+      required: true
+    }
   }
-};
+});
 </script>

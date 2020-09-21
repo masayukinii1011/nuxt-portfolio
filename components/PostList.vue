@@ -35,17 +35,24 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from "@vue/composition-api";
 import PageTitle from "~/components/PageTitle.vue";
 
-export default {
+export default defineComponent({
   components: {
     PageTitle
   },
   props: {
-    title: "",
-    posts: ""
+    title: {
+      type: String,
+      required: true
+    },
+    posts: {
+      type: String,
+      required: true
+    }
   }
-};
+});
 </script>
 
 <style scoped lang="scss">

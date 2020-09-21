@@ -10,15 +10,18 @@
 </template>
 
 <script lang="ts">
-import { mapState } from "vuex";
+import { defineComponent, computed } from "@vue/composition-api";
 import PostDetail from "~/components/PostDetail.vue";
 
-export default {
+export default defineComponent({
   components: {
     PostDetail
   },
-  computed: {
-    ...mapState(["about"])
+  setup(_props, { root }) {
+    const about = computed(() => root.$accessor.about);
+    return {
+      about
+    };
   }
-};
+});
 </script>

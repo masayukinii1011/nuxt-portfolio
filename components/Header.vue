@@ -71,18 +71,18 @@
 </template>
 
 <script lang="ts">
-import { mapState } from "vuex";
+import { defineComponent, computed, ref } from "@vue/composition-api";
 
-export default {
-  data: function() {
+export default defineComponent({
+  setup(_props, { root }) {
+    const categories = computed(() => root.$accessor.categories);
+    const isOpen = ref(false);
     return {
-      isOpen: false
+      categories,
+      isOpen
     };
-  },
-  computed: {
-    ...mapState(["categories"])
   }
-};
+});
 </script>
 
 <style scoped lang="scss">
