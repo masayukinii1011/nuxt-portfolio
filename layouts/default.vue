@@ -1,5 +1,8 @@
 <template>
-  <div :class="{ hasFooterWrapper : this.$route.name !== 'index' }">
+  <div
+    class="wrapper"
+    :class="{ hasFooterWrapper: this.$route.name !== 'index' }"
+  >
     <Header />
     <nuxt />
     <Footer v-if="this.$route.name !== 'index'" />
@@ -203,6 +206,10 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.wrapper {
+  background: #f0f8ff;
 }
 
 .hasFooterWrapper {

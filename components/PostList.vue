@@ -56,6 +56,20 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+.card {
+  transition: 0.2s ease-out;
+  border-radius: 6px;
+
+  &:hover {
+    box-shadow: 0 0.5em 2em -0.125em rgba(10, 10, 10, 0.4),
+      0 0px 0px 1px rgba(10, 10, 10, 0.02);
+  }
+
+  img {
+    border-radius: 6px;
+  }
+}
+
 .card-content {
   height: 100px;
   display: flex;
