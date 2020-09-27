@@ -45,8 +45,7 @@ export default defineComponent({
       required: true
     },
     demoLink: {
-      type: String,
-      required: true
+      type: String
     },
     imgSrc: {
       type: String,
