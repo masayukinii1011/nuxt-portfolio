@@ -8,7 +8,7 @@
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
-    "export": "nuxt-ts export"
+    "generate": "nuxt-ts generate"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
