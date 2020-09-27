@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "@vue/composition-api";
+import { defineComponent, computed } from "@nuxtjs/composition-api";
 import PostList from "~/components/PostList.vue";
 
 export default defineComponent({

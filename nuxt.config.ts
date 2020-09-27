@@ -4,8 +4,6 @@ require("dotenv").config();
 
 const client = require("./plugins/contentful").default;
 
-interface Item {}
-
 const config: NuxtConfig = {
   ssr: "true",
 
@@ -36,11 +34,15 @@ const config: NuxtConfig = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["plugins/contentful", "plugins/composition-api"],
+  plugins: ["plugins/contentful"],
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxt/typescript-build", "nuxt-typed-vuex"],
+  buildModules: [
+    "@nuxt/typescript-build",
+    "nuxt-typed-vuex",
+    "@nuxtjs/composition-api"
+  ],
   /*
    ** Nuxt.js modules
    */

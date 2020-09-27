@@ -55,7 +55,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, computed } from "@vue/composition-api";
+import { defineComponent, reactive, computed } from "@nuxtjs/composition-api";
 import PageTitle from "~/components/PageTitle.vue";
 
 export default defineComponent({
