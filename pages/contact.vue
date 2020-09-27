@@ -10,7 +10,7 @@
               <label class="label is-size-5">Name</label>
               <div class="control">
                 <input
-                  v-model="name"
+                  v-model="state.name"
                   class="input is-medium"
                   name="name"
                   type="text"
@@ -21,7 +21,7 @@
               <label class="label is-size-5">Email</label>
               <div class="control">
                 <input
-                  v-model="email"
+                  v-model="state.email"
                   class="input is-medium"
                   name="email"
                   type="email"
@@ -32,7 +32,7 @@
               <label class="label is-size-5">Message</label>
               <div class="control">
                 <textarea
-                  v-model="message"
+                  v-model="state.message"
                   class="textarea is-large"
                   name="message"
                 ></textarea>
@@ -40,7 +40,7 @@
             </div>
             <div class="control">
               <button
-                :disabled="checkForm"
+                :disabled="state.checkForm"
                 type="submit"
                 class="button is-success is-fullwidth is-large"
               >
@@ -55,35 +55,38 @@
 </template>
 
 <script lang="ts">
+import { defineComponent, reactive, computed } from "@vue/composition-api";
 import PageTitle from "~/components/PageTitle.vue";
 
-export default {
+export default defineComponent({
   components: {
     PageTitle
   },
-  data: function() {
-    return {
-      name: null,
-      email: null,
-      message: null
-    };
-  },
-  computed: {
-    checkForm: function() {
-      if (this.name && this.validEmail(this.email) && this.message) {
-        return false;
-      } else {
-        return true;
-      }
-    }
-  },
-  methods: {
-    validEmail: function(email: string) {
+  setup() {
+    const state = reactive({
+      name: "",
+      email: "",
+      message: "",
+      checkForm: computed(() => {
+        if (state.name && validEmail(state.email) && state.message) {
+          return false;
+        } else {
+          return true;
+        }
+      })
+    });
+
+    const validEmail = (email: string) => {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
-    }
+    };
+
+    return {
+      state,
+      validEmail
+    };
   }
-};
+});
 </script>
 
 <style scoped lang="scss">
