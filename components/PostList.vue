@@ -48,7 +48,6 @@ export default defineComponent({
       required: true
     },
     posts: {
-      type: String,
       required: true
     }
   }
