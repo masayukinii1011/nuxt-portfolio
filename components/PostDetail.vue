@@ -48,12 +48,10 @@ export default defineComponent({
       type: String
     },
     imgSrc: {
-      type: String,
-      required: true
+      type: String
     },
     imgAlt: {
-      type: String,
-      required: true
+      type: String
     }
   }
 });
