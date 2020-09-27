@@ -90,7 +90,7 @@ const config: NuxtConfig = {
                 return item.fields.category.fields.slug === "works";
               }
             )
-            .map((item: { fields: { slug: string } }) => {
+            .map((item: { fields: { slug: any } }) => {
               return { route: `works/${item.fields.slug}`, payload: item };
             })
         ];
