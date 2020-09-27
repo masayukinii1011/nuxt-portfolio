@@ -21,7 +21,7 @@ import { defineComponent, ref } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   setup() {
-    const text = ref("My Portfolio Website");
+    const text = ref("msykn's portfolio website");
     return {
       text
     };
@@ -46,10 +46,10 @@ export default defineComponent({
   }
 
   @media (max-width: 767px) {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
   @media (max-width: 424px) {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 }
 

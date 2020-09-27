@@ -82,7 +82,7 @@ export default defineComponent({
   .button-wrap {
     display: flex;
     justify-content: space-between;
-    width: 240px;
+    max-width: 280px;
     margin: 0 auto 16px;
 
     .button {
