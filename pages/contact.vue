@@ -44,7 +44,7 @@
                 type="submit"
                 class="button is-success is-fullwidth is-large"
               >
-                Send Message
+                Send Messages
               </button>
             </div>
           </form>
