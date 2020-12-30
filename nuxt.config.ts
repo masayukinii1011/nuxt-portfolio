@@ -75,6 +75,7 @@ const config: NuxtConfig = {
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN
   },
   generate: {
+    fallback: 'error.html',
     routes() {
       return Promise.all([
         client.getEntries({
