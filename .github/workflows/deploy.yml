@@ -27,7 +27,7 @@ jobs:
       - name: Build
         run: npm run build
         
-      - name: generate
+      - name: Generate
         run: npm run generate
       
       - name: Sync s3
