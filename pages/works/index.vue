@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PostList :title="$nuxt.$route.name.toUpperCase()" :posts="works" />
+    <PostList :title="this.$route.name.toUpperCase()" :posts="works" />
   </div>
 </template>
 

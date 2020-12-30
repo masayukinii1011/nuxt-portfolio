@@ -3,7 +3,7 @@
     class="wrapper"
     :class="{ hasFooterWrapper: this.$route.name !== 'index' }"
   >
-    <Header />
+    <Header v-if="this.$route.name !== 'error'" />
     <nuxt />
     <Footer v-if="this.$route.name !== 'index'" />
   </div>

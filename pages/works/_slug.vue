@@ -18,6 +18,11 @@ export default {
   components: {
     PostDetail
   },
+  data: function () {
+    return {
+      currentPost: ''
+    }
+  },
   async asyncData({
     payload,
     store,
@@ -29,16 +34,19 @@ export default {
     params: any;
     error: any;
   }) {
-    const currentPost =
-      payload ||
-      (await store.state.works.find(
+    const stateWorks = await store.state.works.find(
         (work: { fields: { slug: any } }) => work.fields.slug === params.slug
-      ));
-    if (currentPost) {
-      return { currentPost };
-    } else {
-      return error({ statusCode: 400 });
+      )
+    const payloadWorks = payload
+    let currentPost;
+
+    if(stateWorks) {
+      currentPost = stateWorks
+    } else if(payloadWorks) {
+      currentPost = payloadWorks
     }
+
+    return { currentPost }
   }
 };
 </script>

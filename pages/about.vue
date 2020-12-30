@@ -1,7 +1,7 @@
 <template>
   <div>
     <PostDetail
-      :title="$nuxt.$route.name.toUpperCase()"
+      :title="this.$route.name.toUpperCase()"
       :body="$md.render(about.fields.body)"
       :githubLink="about.fields.githubLink"
       :demoLink="about.fields.demoLink"
