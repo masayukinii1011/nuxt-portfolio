@@ -17,11 +17,17 @@ jobs:
         uses: actions/setup-node@v2.1.4
         with:
           node-version: 12.x
+          
+      - name: Create .env file
+        run: echo "${{ secrets.ENV_PROD }}" > .env
 
       - name: Package Install
         run: npm install
 
       - name: Build
+        run: npm run build
+        
+      - name: Generate
         run: npm run generate
       
       - name: Sync s3
