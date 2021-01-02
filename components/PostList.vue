@@ -57,7 +57,7 @@ export default defineComponent({
 <style scoped lang="scss">
 .card {
   transition: 0.2s ease-out;
-  border-radius: 6px;
+  border-radius: 6px 6px 0 0;
 
   &:hover {
     box-shadow: 0 0.5em 2em -0.125em rgba(10, 10, 10, 0.4),

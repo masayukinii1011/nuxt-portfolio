@@ -1,10 +1,10 @@
 <template>
   <section class="section">
-    <div class="container">
+    <div class="container body-container">
       <PageTitle :title="this.$route.name.toUpperCase()" />
       <div class="columns is-centered">
         <div class="column is-half">
-          <form name="contact" method="post" data-netlify="true">
+          <form name="contact" method="post" @submit.prevent="onSubmit()">
             <input type="hidden" name="form-name" value="contact" />
             <div class="field">
               <label class="label is-size-5">Name</label>
@@ -57,6 +57,7 @@
 <script lang="ts">
 import { defineComponent, reactive, computed } from "@nuxtjs/composition-api";
 import PageTitle from "~/components/PageTitle.vue";
+import axios from "axios"
 
 export default defineComponent({
   components: {
@@ -81,26 +82,40 @@ export default defineComponent({
       return re.test(email);
     };
 
+    const onSubmit = async () => {
+      const data = {
+        "name": "問い合わせ太郎",
+  "email": "hogehoge@example.com",
+  "body": "問い合わせ内容の本文"
+      }
+      //var me = this;
+      //this.loading = true;
+      //this.showForm = false;
+      try {
+        const res = await axios.post('https://5kgbw2y6da.execute-api.ap-northeast-1.amazonaws.com/v1/send', data)
+        //me.thanks = true;
+        //me.loading = false;
+        console.log(res)
+      } catch(err) {
+        //me.hasError = true;
+        //me.showForm = true;
+        //me.loading = false;
+        console.log(err)
+      };
+    }
+
     return {
       state,
-      validEmail
+      validEmail,
+      onSubmit
     };
   }
 });
 </script>
 
 <style scoped lang="scss">
-.container {
-  background: #fefefe;
-  padding: 0 32px 32px;
-  margin-top: 64px;
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
-
   .input,
   .textarea {
     background: #fafafa;
   }
-}
 </style>

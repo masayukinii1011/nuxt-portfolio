@@ -1,6 +1,6 @@
 <template>
   <section class="section post-detail-wrapper">
-    <div class="container">
+    <div class="container body-container">
       <PageTitle :title="title" />
       <div class="image-wrapper" v-if="imgSrc">
         <img :src="imgSrc" :alt="imgAlt" />
@@ -59,14 +59,6 @@ export default defineComponent({
 
 <style lang="scss">
 .post-detail-wrapper {
-  > .container {
-    background: #fefefe;
-    padding: 0 32px 32px;
-    margin-top: 64px;
-    border-radius: 6px;
-    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-      0 0px 0 1px rgba(10, 10, 10, 0.02);
-  }
 
   .image-wrapper {
     max-width: 640px;
