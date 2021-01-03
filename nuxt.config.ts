@@ -21,7 +21,7 @@ const config: NuxtConfig = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "msykn portfolio" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "favicon.ico" }]
   },
   /*
    ** Customize the progress-bar color
@@ -104,7 +104,18 @@ const config: NuxtConfig = {
   },
   router: {
     middleware: ["getContentful"]
-  }
+  },
+  manifest: {
+    name: 'msykn portfolio',
+    lang: 'ja',
+    short_name: 'msykn',
+    title: 'msykn portfolio',
+    'og:title': 'msykn portfolio',
+    description: 'msykn portfolio',
+    'og:description': 'msykn portfolio',
+    theme_color: '#ffffff',
+    background_color: '#3273dc'
+  },
 };
 
 export default config;
