@@ -16,6 +16,7 @@
     "@nuxtjs/composition-api": "^0.12.5",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/markdownit": "^1.2.9",
+    "@nuxtjs/pwa": "^3.3.3",
     "@types/webpack": "^4.41.22",
     "bulma": "^0.9.0",
     "contentful": "^7.14.4",

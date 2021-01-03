@@ -49,7 +49,7 @@ const config: NuxtConfig = {
   /*
    ** Nuxt.js modules
    */
-  modules: ["nuxt-webfontloader", "@nuxtjs/dotenv", "@nuxtjs/markdownit"],
+  modules: ["nuxt-webfontloader", "@nuxtjs/dotenv", "@nuxtjs/markdownit", '@nuxtjs/pwa'],
   webfontloader: {
     google: {
       families: ["Play"]
