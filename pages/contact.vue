@@ -10,7 +10,7 @@
               <label class="label is-size-5">Name</label>
               <div class="control">
                 <input
-                  v-model="state.name"
+                  v-model="state.form.name"
                   class="input is-medium"
                   name="name"
                   type="text"
@@ -21,7 +21,7 @@
               <label class="label is-size-5">Email</label>
               <div class="control">
                 <input
-                  v-model="state.email"
+                  v-model="state.form.email"
                   class="input is-medium"
                   name="email"
                   type="email"
@@ -32,19 +32,26 @@
               <label class="label is-size-5">Message</label>
               <div class="control">
                 <textarea
-                  v-model="state.message"
+                  v-model="state.form.message"
                   class="textarea is-large"
                   name="message"
                 ></textarea>
               </div>
             </div>
             <div class="control">
+              <div class="is-size-5 mb-3 has-text-centered" v-if="state.isDone">
+                送信が完了しました。
+              </div>
+              <div class="is-size-5 mb-3 has-text-centered has-text-danger" v-if="state.isError">
+                通信中にエラーが発生しました。
+              </div>
               <button
-                :disabled="state.checkForm"
+                :disabled="state.checkForm || state.isLoading"
                 type="submit"
                 class="button is-success is-fullwidth is-large"
               >
-                Send Message
+                <loading v-if="state.isLoading" type="spin" color="#fff" :size="{ width: '24px', height: '24px' }"></loading>
+                <span v-else>Send Message</span>
               </button>
             </div>
           </form>
@@ -65,11 +72,16 @@ export default defineComponent({
   },
   setup() {
     const state = reactive({
-      name: "",
-      email: "",
-      message: "",
+      form: {
+        name: "",
+        email: "",
+        message: ""
+      },
+      isLoading: false,
+      isError: false,
+      isDone: false,
       checkForm: computed(() => {
-        if (state.name && validEmail(state.email) && state.message) {
+        if (state.form.name && validEmail(state.form.email) && state.form.message) {
           return false;
         } else {
           return true;
@@ -83,24 +95,19 @@ export default defineComponent({
     };
 
     const onSubmit = async () => {
-      const data = {
-        "name": "問い合わせ太郎",
-  "email": "hogehoge@example.com",
-  "body": "問い合わせ内容の本文"
-      }
-      //var me = this;
-      //this.loading = true;
-      //this.showForm = false;
+      state.isLoading = true;
+      state.isDone = false;
+      state.isError = false;
       try {
-        const res = await axios.post('https://5kgbw2y6da.execute-api.ap-northeast-1.amazonaws.com/v1/send', data)
-        //me.thanks = true;
-        //me.loading = false;
-        console.log(res)
-      } catch(err) {
-        //me.hasError = true;
-        //me.showForm = true;
-        //me.loading = false;
-        console.log(err)
+        const res = await axios.post(process.env.SEND_MESSEGE_API, state.form)
+        state.isLoading = false;
+        state.isDone = true;
+        state.form.name = ""
+        state.form.email = ""
+        state.form.message = ""
+      } catch {
+        state.isLoading = false;
+        state.isError = true;
       };
     }
 

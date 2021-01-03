@@ -3,5 +3,6 @@ declare namespace NodeJS {
     readonly CTF_SPACE_ID: string;
     readonly CTF_BLOG_POST_TYPE_ID: string;
     readonly CTF_CDA_ACCESS_TOKEN: string;
+    readonly SEND_MESSEGE_API: string;
   }
 }
