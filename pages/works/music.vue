@@ -3,7 +3,7 @@
     <div class="container body-container">
       <PageTitle :title="'music'.toUpperCase()" />
       <div>
-        <p class="mb-5 has-text-centered">ご視聴の際は広告ブロックを無効にしてください。</p>
+        <p class="is-size-5 mb-5 has-text-centered">ご視聴の際は広告ブロックを無効にしてください。</p>
 
         <iframe class="mb-5" frameborder="0" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1092547429&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
 
@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, computed } from "@nuxtjs/composition-api";
+import { defineComponent } from "@nuxtjs/composition-api";
 import PageTitle from "~/components/PageTitle.vue";
 
 export default defineComponent({

@@ -1,22 +1,22 @@
 <template>
-  <div>
-    <PostList :title="'old'.toUpperCase()" :posts="works" />
-  </div>
+  <section class="section">
+    <div class="container body-container">
+      <PageTitle :title="'old'.toUpperCase()" />
+      <div>
+        old
+      </div>
+    </div>
+  </section>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "@nuxtjs/composition-api";
-import PostList from "~/components/PostList.vue";
+import { defineComponent } from "@nuxtjs/composition-api";
+import PageTitle from "~/components/PageTitle.vue";
 
 export default defineComponent({
   components: {
-    PostList
+    PageTitle
   },
-  setup(_props, { root }) {
-    const works = computed(() => root.$accessor.works);
-    return {
-      works
-    };
-  }
+  setup() {}
 });
 </script>

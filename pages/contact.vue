@@ -4,6 +4,7 @@
       <PageTitle :title="this.$route.name.toUpperCase()" />
       <div class="columns is-centered">
         <div class="column is-half">
+          <p class="is-size-5 mb-5 has-text-centered">お問い合わせはこちらからお願いします。</p>
           <form name="contact" method="post" @submit.prevent="onSubmit()">
             <input type="hidden" name="form-name" value="contact" />
             <div class="field">
