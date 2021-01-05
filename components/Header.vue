@@ -34,6 +34,11 @@
               >{{ category.fields.title }}</nuxt-link
             >
             <nuxt-link
+              to="/music"
+              class="navbar-item has-text-weight-bold has-text-white"
+              >Music</nuxt-link
+            >
+            <nuxt-link
               to="/contact"
               class="navbar-item has-text-weight-bold has-text-white"
               >Contact</nuxt-link
@@ -55,6 +60,11 @@
                 :to="{ name: category.fields.slug }"
                 class="navbar-item has-text-weight-bold has-text-white"
                 >{{ category.fields.title }}</nuxt-link
+              >
+              <nuxt-link
+                to="/music"
+                class="navbar-item has-text-weight-bold has-text-white"
+                >Music</nuxt-link
               >
               <nuxt-link
                 @click.native="isOpen = false"
