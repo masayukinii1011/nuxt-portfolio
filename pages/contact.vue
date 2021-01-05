@@ -4,7 +4,7 @@
       <PageTitle :title="this.$route.name.toUpperCase()" />
       <div class="columns is-centered">
         <div class="column is-half">
-          <p class="is-size-5 mb-5 has-text-centered">お問い合わせはこちらからお願いします。</p>
+          <p class="mb-5 has-text-centered">お問い合わせはこちらからお願いします。</p>
           <form name="contact" method="post" @submit.prevent="onSubmit()">
             <input type="hidden" name="form-name" value="contact" />
             <div class="field">
@@ -40,10 +40,10 @@
               </div>
             </div>
             <div class="control">
-              <div class="is-size-5 mb-3 has-text-centered" v-if="state.isDone">
+              <div class="mb-3 has-text-centered" v-if="state.isDone">
                 送信が完了しました。
               </div>
-              <div class="is-size-5 mb-3 has-text-centered has-text-danger" v-if="state.isError">
+              <div class="mb-3 has-text-centered has-text-danger" v-if="state.isError">
                 通信中にエラーが発生しました。
               </div>
               <button
