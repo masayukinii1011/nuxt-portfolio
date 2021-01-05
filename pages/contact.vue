@@ -4,7 +4,6 @@
       <PageTitle :title="this.$route.name.toUpperCase()" />
       <div class="columns is-centered">
         <div class="column is-half">
-          <p class="mb-5 has-text-centered">お問い合わせはこちらからお願いします。</p>
           <form name="contact" method="post" @submit.prevent="onSubmit()">
             <input type="hidden" name="form-name" value="contact" />
             <div class="field">
@@ -40,12 +39,12 @@
               </div>
             </div>
             <div class="control">
-              <div class="mb-3 has-text-centered" v-if="state.isDone">
+              <p class="mb-3 has-text-centered" v-if="state.isDone">
                 送信が完了しました。
-              </div>
-              <div class="mb-3 has-text-centered has-text-danger" v-if="state.isError">
+              </p>
+              <p class="mb-3 has-text-centered has-text-danger" v-if="state.isError">
                 通信中にエラーが発生しました。
-              </div>
+              </p>
               <button
                 :disabled="state.checkForm || state.isLoading"
                 type="submit"
@@ -122,8 +121,14 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  .input,
-  .textarea {
-    background: #fafafa;
-  }
+.input,
+.textarea {
+  background: #fafafa;
+}
+
+p {
+  color: #363636;
+  line-height: 1.25;
+  font-size: 0.9rem;
+}
 </style>

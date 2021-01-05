@@ -13,4 +13,10 @@ div {
   transform: translateY(-50%) translateX(-50%);
   -webkit-transform: translateY(-50%) translateX(-50%);
 }
+
+p {
+  color: #363636;
+  line-height: 1.25;
+  font-size: 0.9rem;
+}
 </style>

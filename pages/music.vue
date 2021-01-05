@@ -3,8 +3,10 @@
     <div class="container body-container">
       <PageTitle :title="'music'.toUpperCase()" />
       <div>
-        <p class="mb-5 has-text-centered">これまでの音楽活動の一部です。<br>
-        ご視聴の際は広告ブロックを無効にしてください。</p>
+        <p class="mb-5">
+          音楽活動も行なっています。<br>
+          視聴の際は広告ブロックを無効にして下さい。
+        </p>
 
         <iframe class="mb-5" frameborder="0" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1092547429&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
 
@@ -21,8 +23,6 @@
         <iframe class="mb-5" frameborder="0" src="https://www.youtube.com/embed/2B2w8jNjoF8" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         <iframe class="mb-5" frameborder="0" src="https://www.youtube.com/embed/gUN3lEoVzr8" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-        <iframe frameborder="0" src="https://bandcamp.com/EmbeddedPlayer/album=3491816205/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless></iframe>
       </div>
     </div>
   </section>
@@ -41,10 +41,36 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+p {
+  color: #363636;
+  line-height: 1.25;
+  font-size: 0.9rem;
+  text-align: center;
+
+  @media all and (max-width: 424px) {
+    text-align: left;
+  }
+}
+
 iframe {
   width: 640px;
   height: 360px;
   margin: auto;
   display: block;
+
+  @media all and (max-width: 767px) {
+    width: 320px;
+    height: 320px;
+  }
+
+  @media all and (max-width: 424px) {
+    width: 264px;
+    height: 264px;
+  }
+
+    @media all and (max-width: 374px) {
+    width: 210px;
+    height: 264px;
+  }
 }
 </style>
