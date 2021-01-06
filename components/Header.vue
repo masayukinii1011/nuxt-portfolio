@@ -18,6 +18,7 @@
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
           </a>
         </div>
         <!--PC-->
@@ -62,6 +63,7 @@
                 >{{ category.fields.title }}</nuxt-link
               >
               <nuxt-link
+                @click.native="isOpen = false"
                 to="/music"
                 class="navbar-item has-text-weight-bold has-text-white"
                 >Music</nuxt-link
