@@ -110,7 +110,8 @@ export default defineComponent({
       margin-bottom: 12px;
     }
 
-    p {
+    p,
+    li {
       color: #363636;
       line-height: 1.5;
       font-size: 0.9rem;
