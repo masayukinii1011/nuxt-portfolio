@@ -5,7 +5,7 @@
       <div class="image-wrapper" v-if="imgSrc">
         <img :src="imgSrc" :alt="imgAlt" />
       </div>
-      <div v-if="githubLink || demoLink" class="button-wrap">
+      <div v-if="githubLink || demoLink" class="button-wrap" :class="{ 'space-between' : githubLink && demoLink }">
         <a v-if="githubLink" :href="githubLink" target="_blank" class="button">
           <img src="/github_logo.png" alt="github logo" />
         </a>
@@ -71,9 +71,13 @@ export default defineComponent({
 
   .button-wrap {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 280px;
     margin: 0 auto 16px;
+
+    &.space-between {
+      justify-content: space-between;
+    }
 
     .button {
       width: 46%;
@@ -92,25 +96,25 @@ export default defineComponent({
       color: #363636;
       font-size: 1.5rem;
       font-weight: 600;
-      line-height: 1.125;
+      line-height: 1.5;
       margin-top: 48px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     h4 {
       color: #363636;
       font-size: 1.2rem;
       font-weight: 600;
-      line-height: 1.125;
-      margin-top: 16px;
-      margin-bottom: 16px;
+      line-height: 1.5;
+      margin-top: 12px;
+      margin-bottom: 12px;
     }
 
     p {
       color: #363636;
-      line-height: 1.25;
+      line-height: 1.5;
       font-size: 0.9rem;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     ul {

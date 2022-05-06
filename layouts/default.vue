@@ -239,4 +239,14 @@ html {
   opacity: 0;
   transform: translateY(2px);
 }
+
+  @media screen and (max-width: 767px) {
+    .section {
+      padding: 3rem 1rem;
+    }
+
+    .body-container {
+      padding: 0 16px 32px;
+    }
+  }
 </style>
