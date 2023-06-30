@@ -1,5 +1,5 @@
 <template>
-  <footer class="has-background-link has-text-white is-paddingless is-flex">(c) 2021 msykn</footer>
+  <footer class="has-background-link has-text-white is-paddingless is-flex">(c) 2021-2023 msykn</footer>
 </template>
 
 <style scoped lang="scss">

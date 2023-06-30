@@ -1,33 +1,23 @@
-# nuxt-portfolio
+## nuxt-portfolio
 
-### Nuxt.js
-このポートフォリオサイトは Nuxt.js + TypeScript + Composition API で作成しました。  
-[Nuxt.js](https://ja.nuxtjs.org/)  
-[Nuxt.js + TypeScript](https://typescript.nuxtjs.org/)  
-[Nuxt.js + Composition API](https://composition-api.nuxtjs.org/)  
-  
-現在はv2を使っていますが、Nuxt.jsのv3が発表されたので移行したいと思っています。  
-TypeScriptもデフォルトでサポートされていて、かなり使い勝手がよくなっている印象。  
+### Application
+このポートフォリオサイトは Nuxt.js + TypeScript + Composition API で作成しました。
+Nuxt.js は2系を使っているので、いい加減移行しないとまずい。
 
-### インフラ
-AWSで組んでいます。  
-ホスティングにS3 + CloudFront + Route 53を使用しています。  
-メールフォームにSESを使用しています。  
-またLambda + API Gatewayを使って、  
-1.URLの正規化  
-2.コンタクトフォームの入力をSESへ連携  
-を実現しています。  
-CI/CDパイプラインをGithub Actionsで組んでいます。  
+### Infrastructure
+AWSで構築。
+ホスティングにS3 + CloudFront + Route 53、メールフォームにSESを使用。
+Lambda + API Gatewayで、
+1.URLの正規化
+2.コンタクトフォームの入力をSESへ連携
+を実現。
+またGithub ActionsでCI/CDパイプラインを構築。
 
-### Contentful
-記事はContentful(Headless CMS)で作成・管理し、API経由で取得しています。  
-[Contentful](https://www.contentful.com/)  
+### Content Management
+記事はContentful(Headless CMS)で管理。
+[Contentful](https://www.contentful.com/)
 
-### Bulma
-CSSフレームワークにBulmaを使用しています。  
-[Bulma](https://bulma.io/)
-
-## Build Setup
+### Build Setup
 
 ``` bash
 # install dependencies
