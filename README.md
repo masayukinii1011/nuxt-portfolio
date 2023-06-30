@@ -2,7 +2,7 @@
 
 ### Application
 このポートフォリオサイトは Nuxt.js + TypeScript + Composition API で作成しました。
-Nuxt.js は2系を使っているので、いい加減移行しないとまずい。
+Nuxt.js は2系を使っているので、いい加減移行しないといけない。
 
 ### Infrastructure
 AWSで構築。

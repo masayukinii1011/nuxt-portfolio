@@ -16,9 +16,9 @@
 
         <iframe class="mb-5" frameborder="0" allow="encrypted-media *; fullscreen *" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/underneath-the-city-of-the-bloom/1334493546"></iframe>
 
-        <iframe class="mb-5" frameborder="0" src="https://youtu.be/oDQt5m3BVD8" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="mb-5" frameborder="0" src="https://www.youtube.com/watch?v=oDQt5m3BVD8" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-        <iframe class="mb-5" frameborder="0" src="https://youtu.be/l9yCRuFNKIY" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="mb-5" frameborder="0" src="https://www.youtube.com/embed/l9yCRuFNKIY" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         <iframe class="mb-5" frameborder="0" src="https://youtu.be/2B2w8jNjoF8" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
